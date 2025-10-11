@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User input form</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+    <div class="form-sect">
+        <h1>Family Details form</h1>
+        <form action="" id="censusForm">
+            <section class="section">
+                <h2>Identeification details</h2>
+               <label for="state">State</label>
+                 <input type="text" name="state" id="state" required>
+            
+                <label for="district">District</label>
+                  <input type="text" name="district" id="district" required>
+                
+                <label for="village">Village/Town/city</label>
+                <input type="text" name="village" id="village" required placeholder="enter your village / city/ town name with pincode">
+                <label for="blockNumber">Enumeration Block Number</label>
+                <input type="text" name="blockNumber" id="blockNumber" required>
+                <label for="head">Household Head Name</label>
+                <input type="text" name="head" id="head" required>
+
+            </section>
+            
+            <section class="section">
+                <h2>family members</h2>
+                <label for="membersCount">Enter the no of members in your family</label>
+               <input id="membersCount" type="number" min="1" max="20" name="membersCount" required>
+
+            </section>
+            <section class="section">
+                <h2>declarition</h2>
+                <div class="dec">
+                    <input type="checkbox" id="declarition" style="width: 20px; height: 60px; margin-right: 30px;"
+                        required><label for="declaration">i declare that the above information is true to the best of my
+                        know ladge of my knowledge.</label>
+                </div>
+            </section>
+            <input type="submit" name="submit" id="submit">
+        </form>
+    </div>
+</body>
+<script src="form.js"></script>
+
+</html>

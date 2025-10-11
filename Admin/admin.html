@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div class="alertmsg" >
+        <div class="cross"><span href="" class="crossbtn" onclick="crossclick()">x</span></div>
+        
+        <p>Alert</p>
+        <div class="alrtmaincont" >
+          
+          Please Note That  the user name should be provided as given to the respective athority other wise if you apply wrong password more than <span class="tree">5</span> times otherwise you will anot allowed to login and should contact to head athority 
+        </div>
+       <br>
+
+         <div class="ok"> <button  onclick="crossclick()">OK</button> </div>
+
+      </div>
+
+
+
+      <div class="login-page">
+        <h1>Log In</h1>
+        <input
+          type="text"
+          name="username"
+          id="userName"
+          placeholder="Enter The User Id"
+        />
+        <input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Enter your password"
+        />
+        <input type="text" id="tokeninp" placeholder="Enter Your Token Key "><button id="toenbtn" onclick="tokbtn()">Reset Chances </button>
+        <span id="logmsg"></span>
+        <button onclick="btnclick()" id="loginbtn">Log In</button>
+      </div>
+      <div class="loader"><div class="loading"></div></div>
+      <div class="table container" >
+         <h2 class="dhed">Dashboard</h2>
+    <p class="tp"><strong >Total Population  </strong>  <span id="totalCount">0</span></p>
+         <div class="filters">
+      <select id="stateFilter"><option value="">Filter by State</option></select>
+      <select id="districtFilter"><option value="">Filter by District</option></select>
+    </div>
+        <table>
+          <tr>
+            <th>Household Head Name</th>
+            <th class="thdc">No of Members</th>
+            <th>State</th>
+            <th class="thdc">District</th>
+          </tr>
+          <tr>
+            <td>Tarek mehta</td>
+            <td>8</td>
+            <td>Mumbai</td>
+            <td>Gore Gao east</td>
+          </tr>
+        </table>
+      </div>
+    </main>
+<footer><marquee behavior="" direction="left">&copy All Rights & Secured By NASS PVT LTD.......</marquee></footer>
+    <script src="admin.js"></script>
+  </body>
+</html>

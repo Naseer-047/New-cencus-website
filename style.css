@@ -1,0 +1,337 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #8fc7ff;
+    min-height: 400vh;
+}
+
+
+h1 ,h1 a {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    color:rgb(255, 255, 255);
+    width: 60%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 34px;
+    cursor: pointer;
+    text-decoration: none;
+}
+h1 a:hover{
+  color: white;
+  transition: 1s ease-in-out;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    /* background-color: rgb(255, 255, 255); */
+    padding: 5px 20px;
+    position: fixed;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    padding: 0 20px;
+    font-weight: 900;
+    font-style: unset;
+    
+}
+
+nav {
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    width: 70%;
+    list-style: none;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a, .drop a {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    padding: 6px 10px;
+     
+    
+}
+
+
+nav ul li a:hover,
+nav ul li a:focus {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
+    box-shadow: none;
+     background-color: #005EA2;
+    color: white;
+    border-color: #005EA2;
+     border-bottom:3px solid white ;
+    transition:  .5s ease-in-out;
+}
+
+
+
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    justify-content: center;
+}
+
+.video {
+    width: 90%;
+    height: 570px; 
+    overflow: hidden;
+  
+}
+
+.video img { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(7px);
+    z-index: -1;
+    position: absolute; 
+    top: 0;
+    left: 0;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    padding: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(254, 254, 254);
+    z-index: 1;
+}
+
+.text h1 {
+    width: 100%;
+    color: white;
+    font-size: 70px;
+    margin-bottom: 10px;
+}
+
+.form-button {
+    margin-top: 25px;
+    align-self: center;
+    text-decoration: none;
+    background-color: rgb(253, 253, 253);
+    border: 2px solid white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    color: black;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #005EA2;
+    color: white;
+    border-color: #005EA2;
+}
+
+
+.aboutbox {
+    width: 95%;
+    background-color: #dcdcdc;
+    margin: 20px 0;
+    padding: 20px;
+}
+.abtsec{
+  display: flex;
+  justify-content: center;
+}
+.aboutbox h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 70px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-text-fill-color: rgb(0, 0, 0);
+}
+
+.aboutbox p {
+    padding: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    color: #561f1f; 
+}
+
+
+.drop {
+    position: relative;
+    display: block;
+}
+
+.pan {
+    position: absolute;
+    top: 100%;
+    left: -20%;
+    transform: translateX(-50%) translateY(10px);
+    background: #fff;
+    color: #000;
+    width: 250px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.drop:hover .pan {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.pan h4 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.pan a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 6px 0;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.pan a:hover {
+    color: #fff6f6;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .text h1 {
+        font-size: 55px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    
+    header {
+        padding: 5px 10px;
+    }
+
+    .menu-toggle {
+        display: block; 
+    }
+
+   
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        background: rgb(255, 255, 255);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 90;
+        
+    }
+
+    
+    nav.open {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 95%;
+        margin: 0;
+        height: 77px;
+    }
+
+    nav ul li a, .drop a {
+        padding: 10px 20px;
+        font-size: 18px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    
+    .drop:hover .pan, .pan {
+        position: static; 
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        padding-left: 40px; 
+        transform: none;
+    }
+
+    
+    .video {
+        height: 700px;
+    }
+
+    .text {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .text h1 {
+        font-size: 40px;
+    }
+
+    .text p {
+        font-size: 16px;
+    }
+    
+    .aboutbox h2 {
+        font-size: 40px;
+        padding: 0 10px;
+    }
+    .aboutbox p {
+        padding: 15px;
+    }
+    h1 a{
+        display: none;
+    }
+}
