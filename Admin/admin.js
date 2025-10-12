@@ -48,6 +48,9 @@ if(wrongPasswordCount>5){
          localStorage.setItem('wrongpss',wrongPasswordCount)
          location.reload();
         }
+        else{
+          alert('validation failed')
+        }
       }
 }
 
