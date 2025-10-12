@@ -7,7 +7,7 @@ h1{
     font-size: 60px;
 }
 .login-page{
-  
+
     display: flex;
     width: 100%;
     height: 100vh;
@@ -162,16 +162,67 @@ button:hover{
         display: none;
     }
     .loading{
-        height: 100px;
+        height: 200px;
+        width: 200px;
+        border: 12px solid#e3e3e3;
+        border-radius: 50%;
+        border-right-color: #007BFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: spin 1s ease infinite;
+    }
+    .loading1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         height: 150px;
+        width: 150px;
+        border: 12px solid#e3e3e3;
+        border-radius: 50%;
+        border-right-color: #d0ff73;
+        animation: spin1 1s ease infinite;
+    }
+    .loading2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         height: 100px;
         width: 100px;
         border: 12px solid#e3e3e3;
-        border-radius: 20%;
-        border-right-color: #007BFF;
-        animation: spin 1s ease infinite;
+        border-radius: 50%;
+        border-right-color: #73ff7c;
+        animation: spin2 1s ease infinite;
+    }
+    .loading3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+         height: 50px;
+        width: 50px;
+        border: 12px solid#e3e3e3;
+        border-radius: 50%;
+        border-right-color: #ff0000;
+        animation: spin3 1s ease infinite;
     }
    @keyframes spin {
     100%{
         transform: rotate(360deg);
+    }
+   }
+   @keyframes spin1 {
+    100%{
+        transform: rotate(-180deg);
+    }
+   }
+   @keyframes spin2 {
+    100%{
+        transform: rotate(360deg);
+    }
+   }
+   @keyframes spin3 {
+    100%{
+        transform: rotate(-1800deg);
     }
    }
 @media only screen and (max-width: 600px) {

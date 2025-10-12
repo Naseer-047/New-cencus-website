@@ -14,7 +14,7 @@ function btnclick() {
     logmsg.style.color = 'green';
     setTimeout(() => document.querySelector('.login-page').style.display = 'none', 3000);
     document.querySelector('.loader').style.display = 'flex';
-    setTimeout(() => document.querySelector('.loader').style.display = 'none', 5000);
+    setTimeout(() => document.querySelector('.loader').style.display = 'none', 6000);
     document.querySelector('.container').style.display = 'flex';
   } else {
     logmsg.innerText = '❌ Wrong Username or Password';
