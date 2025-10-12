@@ -296,7 +296,9 @@ nav ul li a:focus {
     justify-content: center;
     text-transform: uppercase;
 }
-
+.docheading{
+    font-size: 70px; margin-bottom: 50px;
+}
 @media only screen and (max-width: 1024px) {
     .text h1 {
         font-size: 55px;
@@ -400,18 +402,21 @@ details{
     margin: 20px;
     width: 80%;
     height: 150px;
-    background-color: #f30303;
+    background-color: #e2e2e2;
     display: flex;
 }
 .docrow1{
     margin-bottom: 5px;
     width:100%;
-    background-color: #005EA2;
+    background-color: #fffbfb;
     height: 600px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
    
+}
+.docheading{
+    font-size: 40px;
 }
 }
