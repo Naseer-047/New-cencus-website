@@ -11,7 +11,7 @@ h1 ,h1 a {
     display: flex;
     flex-direction: column;
     margin: 10px;
-    color:rgb(225, 220, 220);
+    color:rgb(0, 0, 0);
     width: 60%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 34px;
@@ -253,6 +253,37 @@ nav ul li a:focus {
     width: 100%;
     background-color: #005EA2;
     height: 150px;
+    display: flex;
+    align-items: center;
+   
+}
+.docrowitm1{
+    margin: 20px;
+    width: 50%;
+    height: 100px;
+    background-color: #f30303;
+    display: flex;
+    
+}
+.docicon  {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    font-weight: 600;
+    font-size: 90px;
+    color: #030303;
+    width: 100px;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 10px 0px 15px rgba(0, 0, 0, 0.2);
+
+}
+.docicon:hover{
+     box-shadow: 10px 0px 15px rgba(0, 0, 0, 0.4);
+}
+ a{
+    text-decoration: none;
 }
 @media only screen and (max-width: 1024px) {
     .text h1 {
@@ -353,4 +384,22 @@ details{
     h1 a{
         display: none;
     }
+    .docrowitm1{
+    margin: 20px;
+    width: 80%;
+    height: 150px;
+    background-color: #f30303;
+    display: flex;
+}
+.docrow1{
+    margin-bottom: 5px;
+    width:100%;
+    background-color: #005EA2;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+   
+}
 }
