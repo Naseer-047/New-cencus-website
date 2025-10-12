@@ -42,7 +42,7 @@ if(wrongPasswordCount>5){
    document.getElementById('toenbtn')
    toenbtn.style.display='inline';
       function tokbtn(){
-        if (token==6362012799) {
+        if (token=='abc') {
           alert('token validation successfull')
          wrongPasswordCount=1;
          localStorage.setItem('wrongpss',wrongPasswordCount)
