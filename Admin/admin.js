@@ -1,56 +1,48 @@
- wrongPasswordCount= localStorage.getItem('wrongpss') || 1;
+wrongPasswordCount = localStorage.getItem('wrongpss') || 1;
 
-function crossclick(){
-  document.querySelector('.alertmsg').style.display='none';
+function crossclick() {
+  document.querySelector('.alertmsg').style.display = 'none';
 }
-
 
 function btnclick() {
   const userName = document.querySelector('#userName').value;
   const password = document.getElementById('password').value;
+  const logmsg = document.getElementById('logmsg');
 
   if (userName === 'admin' && password === '123') {
-    document.querySelector('logmsg')
-    logmsg.innerText='✅Login success full'
-    logmsg.style.color='green';
-  setTimeout(()=> document.querySelector('.login-page').style.display='none',3000);
- document.querySelector('.loader').style.display='flex';
- setTimeout(()=>document.querySelector('.loader').style.display='none' ,5000);
- document.querySelector('.container').style.display='flex';
-
-  }
-  else {
-        logmsg.innerText='❌ Wrong Username or Password';
-    logmsg.style.color='red';
+    logmsg.innerText = '✅ Login successful';
+    logmsg.style.color = 'green';
+    setTimeout(() => document.querySelector('.login-page').style.display = 'none', 3000);
+    document.querySelector('.loader').style.display = 'flex';
+    setTimeout(() => document.querySelector('.loader').style.display = 'none', 5000);
+    document.querySelector('.container').style.display = 'flex';
+  } else {
+    logmsg.innerText = '❌ Wrong Username or Password';
+    logmsg.style.color = 'red';
     wrongPasswordCount++;
-    localStorage.setItem('wrongpss',wrongPasswordCount)
-    alert(wrongPasswordCount)
-     location.reload();
-     
+    localStorage.setItem('wrongpss', wrongPasswordCount);
+    alert(wrongPasswordCount);
+    location.reload();
   }
 }
-if(wrongPasswordCount>5){
- 
-   alert('your password have overed')
-   document.getElementById('loginbtn')
-   .style.display='none';
-   userName.style.display='none'
-   password.style.display='none'
-   document.getElementById('tokeninp')
-   tokeninp.style.display='block'
-   let token= tokeninp.value;
-   document.getElementById('toenbtn')
-   toenbtn.style.display='inline';
-      function tokbtn(){
-        if (token=='abc') {
-          alert('token validation successfull')
-         wrongPasswordCount=1;
-         localStorage.setItem('wrongpss',wrongPasswordCount)
-         location.reload();
-        }
-        else{
-          alert('validation failed')
-        }
-      }
+
+if (wrongPasswordCount > 5) {
+  alert('Your password attempts are over');
+  document.getElementById('loginbtn').style.display = 'none';
+  document.getElementById('userName').style.display = 'none';
+  document.getElementById('password').style.display = 'none';
+  document.getElementById('tokeninp').style.display = 'block';
+  document.getElementById('toenbtn').style.display = 'inline';
 }
 
+function tokbtn() {
+  const token = document.getElementById('tokeninp').value;
+  if (token === 'abc') {
+    alert('Token validation successful');
+    wrongPasswordCount = 1;
+    localStorage.setItem('wrongpss', wrongPasswordCount);
+    location.reload();
+  } else {
+    alert('Validation failed');
+  }
+}
