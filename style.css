@@ -245,6 +245,14 @@ nav ul li a:focus {
     margin: 20px 0;
     padding: 20px;
     justify-self: center;
+    display: flex;
+    flex-direction: column;
+}
+.docrow1{
+    margin-bottom: 5px;
+    width: 100%;
+    background-color: #005EA2;
+    height: 150px;
 }
 @media only screen and (max-width: 1024px) {
     .text h1 {
