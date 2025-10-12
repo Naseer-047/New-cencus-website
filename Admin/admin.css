@@ -165,7 +165,7 @@ button:hover{
         height: 100px;
         width: 100px;
         border: 12px solid#e3e3e3;
-        border-radius: 50%;
+        border-radius: 20%;
         border-right-color: #007BFF;
         animation: spin 1s ease infinite;
     }
