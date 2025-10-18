@@ -1,69 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Data Form</title>
-  <style>
-    input, button {
-      display: block;
-      padding: 5px;
-      margin: 10px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Census News</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f7fb;
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+ 
+  @media (max-width: 600px) {
+   
+  }
+</style>
 </head>
 <body>
-  <input type="text" id="studentname" placeholder="Enter Student Name">
-  <input type="text" id="coursename" placeholder="Enter Course Name">
-  <input type="text" id="sectionname" placeholder="Enter Section">
-  <button onclick="dataentered()">Submit</button>
-  <div class="sbmittble"></div>
- <div class="trrr"></div>
-  <script>
-    let savedData = localStorage.getItem('datastored');
-    let studentData = [];
 
+<div class="news-section">
+  <div class="news-header">📰 Census 2025 Updates</div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      📅 Enumeration Phase Begins 
+      <span class="accordion-icon">▼</span>
+    </button>
+    <div class="accordion-body">
+      <p>The nationwide enumeration phase has officially started in all 28 states and 8 union territories, ensuring a fully digital census process.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      💻 Digital Data Collection Rollout 
+      <span class="accordion-icon">▼</span>
+    </button>
+    <div class="accordion-body">
+      <p>Enumerators will now collect data through a secure government app, reducing manual errors and improving accuracy by 40%.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      🧑‍🤝‍🧑 Enumerator Training Completed 
+      <span class="accordion-icon">▼</span>
+    </button>
+    <div class="accordion-body">
+      <p>Over 10 lakh enumerators have completed digital training programs, ensuring uniform data entry across all districts.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      🌍 Preliminary Population Count 
+      <span class="accordion-icon">▼</span>
+    </button>
+    <div class="accordion-body">
+      <p>India’s preliminary population is projected at 1.43 billion, with urbanization growing by 12% compared to 2011 census data.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      🔒 Data Privacy Measures 
+      <span class="accordion-icon">▼</span>
+    </button>
+    <div class="accordion-body">
+      <p>All collected data is encrypted and securely stored in government cloud servers with strict access controls.</p>
+    </div>
+  </div>
+
+  <div class="accordion-item">
+    <button class="accordion-header">
+      📈 Upcoming Report Release 
+      <span class="accordion-icon">▼</span>
+    </button>
+    <div class="accordion-body">
+      <p>The Ministry of Statistics will release the first official Census 2025 insights report in early January next year.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const accordions = document.querySelectorAll(".accordion-header");
+
+accordions.forEach(header => {
+  header.addEventListener("click", () => {
+    const item = header.parentElement;
+    const openItem = document.querySelector(".accordion-item.active");
     
-      studentData = savedData ? JSON.parse(savedData) : [];
+    // Close currently open item (if any)
+    if (openItem && openItem !== item) {
+      openItem.classList.remove("active");
+    }
     
-    function dataentered() {
-      let sdata = {
-        name: document.getElementById('studentname').value.trim(),
-        course: document.getElementById('coursename').value.trim(),
-        section: document.getElementById('sectionname').value.trim()
-      };
+    // Toggle current item
+    item.classList.toggle("active");
+  });
+});
+</script>
 
-      studentData.push(sdata);
-      localStorage.setItem('datastored', JSON.stringify(studentData));
-      alert("Data saved successfully!");
-      displayData();
-    }
-
-    function displayData() {
-      let display = document.querySelector('.sbmittble');
-      let details = `
-        <table border="1" style="border-collapse:collapse;">
-          <tr>
-            <th>Student Name</th>
-            <th>Course</th>
-            <th>Section</th>
-          </tr>
-      `;
-      
-      for (let i = 0; i < studentData.length; i++) {
-        details += `
-          <tr>
-            <td>${studentData[i].name}</td>
-            <td>${studentData[i].course}</td>
-            <td>${studentData[i].section}</td>
-          </tr>
-        `;
-      }
-      details += `</table>`;
-      display.innerHTML = details;
-    }
-
-    displayData(); // Show data on page load
-  </script>
 </body>
 </html>

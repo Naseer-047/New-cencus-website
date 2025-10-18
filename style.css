@@ -267,6 +267,88 @@ nav ul li a:focus {
 details{
     background-color: #fff;
 }
+.news{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+ .news-section {
+    width: 98%;
+    /* max-width: 700px; */
+    background: white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+   
+  }
+
+  .news-header {
+    text-align: center;
+    background: linear-gradient(137deg, #ffffff, #fcfcfc);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-bottom: 3px solid #003b94;
+  }
+
+  .accordion-item {
+    border-bottom: 1px solid #eee;
+  }
+
+  .accordion-header {
+    background: #fff;
+    color: #004aad;
+    font-weight: 600;
+    padding: 18px 20px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    font-size: 1.05rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+  .accordion-header:hover {
+    background: #f0f6ff;
+  }
+
+  .accordion-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+  }
+
+  .accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    background: #f9fbff;
+    color: #333;
+    padding: 0 20px;
+    line-height: 1.6;
+    transition: all 0.45s ease;
+  }
+
+  .accordion-item.active .accordion-body {
+    padding: 15px 20px;
+    max-height: 300px;
+  }
+
+  /* Smooth slide effect */
+  .accordion-body p {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .accordion-item.active .accordion-body p {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
 @media only screen and (max-width: 1024px) {
     body{
@@ -393,5 +475,13 @@ details{
 .doctxt{
     font-size: 17px;
 }
+ .news-header {
+      font-size: 1.3rem;
+      padding: 15px;
+    }
+    .accordion-header {
+      font-size: 0.95rem;
+      padding: 15px;
+    }
 }
    
