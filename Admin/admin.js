@@ -24,8 +24,30 @@ function btnclick() {
     alert(wrongPasswordCount);
     location.reload();
   }
+  
 }
-
+let lodData=  JSON.parse(localStorage.getItem('censusList'))       
+  console.log(lodData)
+ let tableBlock=` <table>
+          <tr>
+            <th>Household Head Name</th>
+            <th class="thdc">District</th>
+            <th>State</th>
+            <th class="thdc">No of members in family</th>
+          </tr>
+          
+        `;
+  for(let i=0 ; i<lodData.length;i++){
+    tableBlock+=`
+          <tr>
+            <td class="trrr">${lodData[i].household}</td>
+            <td class="trrr">${lodData[i].district}</td>
+            <td class="trrr">${lodData[i].state}</td>
+            <td class="trrr">${lodData[i].familyMembers}</td>
+          </tr>`;
+  }
+  tableBlock+=`</table>`
+  document.querySelector('.tablea').innerHTML=tableBlock;
 if (wrongPasswordCount > 5) {
   alert('Your password attempts are over');
   document.getElementById('loginbtn').style.display = 'none';

@@ -3,117 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hover Floating Dropdown</title>
+  <title>Student Data Form</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f5f5;
-    }
-
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      background: #232f3e;
-      padding: 12px 20px;
-      position: relative;
-    }
-
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      padding: 10px 15px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    /* Dropdown floating panel */
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-panel {
-      position: absolute;
-      top: 270%;  /* just below navbar link */
-      right: 0;
-      background: #fff;
-      color: #000;
-      width: 600px;
-      display: flex;
-      gap: 30px;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.3s ease;
-      z-index: 1000;
-    }
-
-    .dropdown:hover .dropdown-panel {
-      opacity: 1;
-      visibility: visible;
-    transform: translateY(0);
-    }
-
-    /* Column style */
-    .dropdown-panel .column {
-      flex: 1;
-    }
-
-    .dropdown-panel h4 {
-      margin-bottom: 10px;
-      font-size: 16px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 5px;
-    }
-
-    .dropdown-panel a {
+    input, button {
       display: block;
-      color: #333;
-      text-decoration: none;
-      padding: 6px 0;
-      font-size: 14px;
-      transition: color 0.2s;
-    }
-
-    .dropdown-panel a:hover {
-      color: #ff9900;
+      padding: 5px;
+      margin: 10px;
     }
   </style>
 </head>
 <body>
+  <input type="text" id="studentname" placeholder="Enter Student Name">
+  <input type="text" id="coursename" placeholder="Enter Course Name">
+  <input type="text" id="sectionname" placeholder="Enter Section">
+  <button onclick="dataentered()">Submit</button>
+  <div class="sbmittble"></div>
+ <div class="trrr"></div>
+  <script>
+    let savedData = localStorage.getItem('datastored');
+    let studentData = [];
 
-  <div class="navbar">
-    <div class="dropdown">
-      <a>Account & Lists ▼</a>
-      <div class="dropdown-panel">
-        <div class="column">
-          <h4>Your Account</h4>
-          <a href="#">Your Orders</a>
-          <a href="#">Your Wishlist</a>
-          <a href="#">Your Prime</a>
-          <a href="#">Memberships</a>
-        </div>
-        <div class="column">
-          <h4>Your Lists</h4>
-          <a href="#">Shopping List</a>
-          <a href="#">Create a Wish List</a>
-          <a href="#">Baby Wishlist</a>
-        </div>
-        <div class="column">
-          <h4>Quick Links</h4>
-          <a href="#">Switch Accounts</a>
-          <a href="#">Sign Out</a>
-          <a href="#">Customer Service</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    
+      studentData = savedData ? JSON.parse(savedData) : [];
+    
+    function dataentered() {
+      let sdata = {
+        name: document.getElementById('studentname').value.trim(),
+        course: document.getElementById('coursename').value.trim(),
+        section: document.getElementById('sectionname').value.trim()
+      };
 
+      studentData.push(sdata);
+      localStorage.setItem('datastored', JSON.stringify(studentData));
+      alert("Data saved successfully!");
+      displayData();
+    }
+
+    function displayData() {
+      let display = document.querySelector('.sbmittble');
+      let details = `
+        <table border="1" style="border-collapse:collapse;">
+          <tr>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Section</th>
+          </tr>
+      `;
+      
+      for (let i = 0; i < studentData.length; i++) {
+        details += `
+          <tr>
+            <td>${studentData[i].name}</td>
+            <td>${studentData[i].course}</td>
+            <td>${studentData[i].section}</td>
+          </tr>
+        `;
+      }
+      details += `</table>`;
+      display.innerHTML = details;
+    }
+
+    displayData(); // Show data on page load
+  </script>
 </body>
 </html>
