@@ -488,25 +488,58 @@ details{
     height: 40vh;
     background-color: #9dcaf9;
     box-shadow: -10px 0px 10px rgba(134, 134, 134, 0.4);
+    display: flex;
+    
    }
    .footlinks{
     background-color: #8d8d8d;
-    width: 50%;
+    width: 40%;
     height: 100%;
     list-style: none;
     display: flex;
-    line-height: 40px;
+    line-height: 35px;
     align-items: center;
+   
+    box-shadow: 10px 0px 10px rgba(0, 0, 0, 0.2);
    }
    .foto a{
     display: flex;
      flex-direction: column;
     color: white;
     font-size: 20px;
+    
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
    }
    .foto a:hover{
     font-size: 25px;
     color: #eee;
-    font-weight: 900;
+    font-weight: 400;
    }
+   .socialicon{
+    width: 60%;
+    background-color: #005EA2;
+    color: #fcfcfc;
+    padding: 30px;
+   }
+   .socicons{
+    display: flex;
+    width: 300px;
+    justify-content: space-evenly;
+    justify-self: center;
+    align-items: center;
+   height: 60px;
+   }
+   .scic{
+    width: 50px;
+    background-color: #005EA2;
+    margin: 2px;
+    height: 50px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(20);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+   }
+    
