@@ -491,17 +491,22 @@ details{
    }
    .footlinks{
     background-color: #8d8d8d;
-    width: 600px;
-    height: 300px;
+    width: 50%;
+    height: 100%;
     list-style: none;
     display: flex;
     line-height: 40px;
     align-items: center;
    }
-   ul a{
+   .foto a{
     display: flex;
      flex-direction: column;
-    color: #eee;
+    color: white;
     font-size: 20px;
    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   }
+   .foto a:hover{
+    font-size: 25px;
+    color: #eee;
+    font-weight: 900;
    }
