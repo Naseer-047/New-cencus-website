@@ -16,6 +16,7 @@ function btnclick() {
     document.querySelector('.loader').style.display = 'flex';
     setTimeout(() => document.querySelector('.loader').style.display = 'none', 6000);
     document.querySelector('.container').style.display = 'flex';
+    countin();
   } else {
     logmsg.innerText = '❌ Wrong Username or Password';
     logmsg.style.color = 'red';
@@ -37,6 +38,18 @@ let lodData=  JSON.parse(localStorage.getItem('censusList'))
           </tr>
           
         `;
+        function countin(){
+          let cou;
+          document.querySelector('#totalCount')
+          for (let i = 0; i < lodData.length; i++) {
+             cou = parseInt( lodData[i-i].familyMembers)+parseInt( lodData[i].familyMembers);
+            console.log(typeof(lodData[i].familyMembers));
+          }
+          let coun=cou;
+          totalCount.innerText=coun;
+        }
+       console.log(typeof(lodData.familyMembers));
+        
   for(let i=0 ; i<lodData.length;i++){
     tableBlock+=`
           <tr>
