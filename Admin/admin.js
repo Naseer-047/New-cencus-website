@@ -39,7 +39,7 @@ let lodData=  JSON.parse(localStorage.getItem('censusList'))
           
         `;
        function countin() {
-  let cou = 0; // start from 0
+  let cou = 0; 
   let totalCount = document.querySelector('#totalCount');
 
   for (let i = 0; i < lodData.length; i++) {
