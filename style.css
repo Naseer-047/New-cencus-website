@@ -269,6 +269,9 @@ details{
 }
 
 @media only screen and (max-width: 1024px) {
+    body{
+        width: 95%;
+    }
     .text h1 {
         font-size: 55px;
     }
