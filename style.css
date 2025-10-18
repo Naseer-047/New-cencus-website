@@ -481,6 +481,25 @@ details{
       font-size: 0.95rem;
       padding: 15px;
     }
+    footer{
+        flex-direction: column;
+        height: 150vh !important;
+        
+    }
+    .footlinks{
+        width: 100% !important;
+        
+    }
+    .footlinks ul a{
+        width: 90% !important;
+       
+        line-height: 3;
+        justify-content: center !important;
+        
+    }
+    .socialicon{
+        width: 87% !important;
+    }
 }
    footer{
     margin-top: 150px;
