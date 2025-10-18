@@ -38,16 +38,17 @@ let lodData=  JSON.parse(localStorage.getItem('censusList'))
           </tr>
           
         `;
-        function countin(){
-          let cou;
-          document.querySelector('#totalCount')
-          for (let i = 0; i < lodData.length; i++) {
-             cou = parseInt( lodData[i-i].familyMembers)+parseInt( lodData[i].familyMembers);
-            console.log(typeof(lodData[i].familyMembers));
-          }
-          let coun=cou;
-          totalCount.innerText=coun;
-        }
+       function countin() {
+  let cou = 0; // start from 0
+  let totalCount = document.querySelector('#totalCount');
+
+  for (let i = 0; i < lodData.length; i++) {
+    cou += parseInt(lodData[i].familyMembers); // add each family's members
+  }
+
+  totalCount.innerText = cou;
+}
+
        console.log(typeof(lodData.familyMembers));
         
   for(let i=0 ; i<lodData.length;i++){
