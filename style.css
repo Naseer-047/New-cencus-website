@@ -387,6 +387,7 @@ details{
    
 }
 .docheading{
+    width: 90%;
     font-size: 35px;
 }
 .doctxt{
