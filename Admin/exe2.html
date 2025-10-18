@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>State-District Selector</title>
+</head>
+<body>
+  <h2>State–District Selector</h2>
+
+  <label for="state">Select State:</label>
+  <select id="state" onchange="updateDistricts()">
+    <option value="">--Select State--</option>
+    <option value="Karnataka">Karnataka</option>
+    <option value="West Bengal">West Bengal</option>
+    <option value="Maharashtra">Maharashtra</option>
+  </select>
+
+  <br><br>
+
+  <label for="district">Select District:</label>
+  <select id="district">
+    <option value="">--Select District--</option>
+  </select>
+
+  <script>
+    // State-wise district data
+    const districtData = {
+      Karnataka: [
+        "Bengaluru Urban",
+        "Bengaluru Rural",
+        "Mysuru",
+        "Belagavi",
+        "Hubballi",
+        "Mangalore"
+      ],
+      "West Bengal": [
+        "Kolkata",
+        "Howrah",
+        "Darjeeling",
+        "Nadia",
+        "Hooghly"
+      ],
+      Maharashtra: [
+        "Mumbai",
+        "Pune",
+        "Nagpur",
+        "Nashik",
+        "Aurangabad"
+      ]
+    };
+
+    function updateDistricts() {
+      const stateSelect = document.getElementById("state");
+      const districtSelect = document.getElementById("district");
+      const selectedState = stateSelect.value;
+
+      // Clear existing options
+      districtSelect.innerHTML = '<option value="">--Select District--</option>';
+
+      // If a valid state is selected, add corresponding districts
+      if (selectedState && districtData[selectedState]) {
+        districtData[selectedState].forEach(district => {
+          const option = document.createElement("option");
+          option.value = district;
+          option.textContent = district;
+          districtSelect.appendChild(option);
+        });
+      }
+    }
+  </script>
+</body>
+</html>
