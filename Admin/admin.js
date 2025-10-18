@@ -43,7 +43,7 @@ let lodData=  JSON.parse(localStorage.getItem('censusList'))
   let totalCount = document.querySelector('#totalCount');
 
   for (let i = 0; i < lodData.length; i++) {
-    cou += parseInt(lodData[i].familyMembers); // add each family's members
+    cou += parseInt(lodData[i].familyMembers); 
   }
 
   totalCount.innerText = cou;
