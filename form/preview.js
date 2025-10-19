@@ -21,7 +21,7 @@ console.log(data);
       }
         let allData = JSON.parse(localStorage.getItem("censusList")) || [];
       allData.push(data);
-      localStorage.setItem("censusList", JSON.stringify(allData ,demodat));
+      localStorage.setItem("censusList", JSON.stringify(allData + demodat));
       localStorage.removeItem("tempCensus");
 
       alert("Census data submitted successfully!");
