@@ -74,7 +74,7 @@ nav ul li a, .drop a {
     display: block;
     text-decoration: none;
     font-size: 20px;
-    color: rgb(255, 255, 255);  
+    color: rgb(0, 0, 0);  
     padding: 6px 10px;
      
     
@@ -103,7 +103,7 @@ nav ul li a:focus {
 
 .video {
     width: 90%;
-    height: 570px; 
+    height: 600px; 
     overflow: hidden;
   
 }
@@ -136,6 +136,7 @@ nav ul li a:focus {
     text-align: center;
     color: rgb(254, 254, 254);
     z-index: 1;
+    margin-top: 20px;
 }
 
 .text h1 {
