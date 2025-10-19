@@ -167,7 +167,6 @@ function updateDistrictOptions() {
   const selectedState = stateSelect ? stateSelect.value : '';
   districtSelect.innerHTML = '<option value="">All Districts</option>';
   if (selectedState && stateDistrictMap[selectedState]) {
-    // convert Set to Array and sort (optional)
     Array.from(stateDistrictMap[selectedState])
       .sort()
       .forEach(district => {
