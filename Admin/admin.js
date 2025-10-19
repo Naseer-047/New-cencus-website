@@ -190,7 +190,7 @@ function btnclick() {
   if (userName === 'admin' && password === '123') {
     logmsg.innerText = '✅ Login successful';
     logmsg.style.color = 'green';
-    setTimeout(() => document.querySelector('.login-page').style.display = 'none', 3000);
+    setTimeout(() => document.querySelector('.login-page').style.display = 'none', 1000);
     document.querySelector('.loader').style.display = 'flex';
     setTimeout(() => document.querySelector('.loader').style.display = 'none', 6000);
     document.querySelector('.container').style.display = 'flex';
