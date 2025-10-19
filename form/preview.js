@@ -1,33 +1,5 @@
-const data = JSON.parse(localStorage.getItem('tempCencus'));
-console.log(data);
 
-    if (data) {
-      document.getElementById("pstate").textContent = data.state;
-      document.getElementById("pdistrict").textContent = data.district;
-      document.getElementById("pCity").textContent = data.city;
-      document.getElementById("pBlocknumber").textContent = data.enemuration;
-      document.getElementById("pHousehold").textContent = data.household;
-      document.getElementById("pFamilymembers").textContent = data.familyMembers;
-    }
- document.getElementById("editBtn").addEventListener("click", () => {
-      window.location.href = "form.html";
-    });
-
-    document.getElementById("submitBtn").addEventListener("click", () => {
-      if (!data) {
-        alert("No data found. Please fill the form again.");
-        window.location.href = "form.html";
-        return;
-      }
-        let allData = JSON.parse(localStorage.getItem("censusList")) || [];
-      allData.push(data);
-      localStorage.setItem("censusList", JSON.stringify(allData + demodat));
-      localStorage.removeItem("tempCensus");
-
-      alert("Census data submitted successfully!");
-      window.location.href = "/index.html";
-    });
-    let demodat = [
+let demodat = [
   { household: "Manjunath Gowda", district: "Bengaluru Urban", state: "Karnataka", familyMembers: 5 },
   { household: "Kavya R", district: "Bengaluru Rural", state: "Karnataka", familyMembers: 4 },
   { household: "Ramesh Naik", district: "Mysuru", state: "Karnataka", familyMembers: 6 },
@@ -150,3 +122,34 @@ console.log(data);
   { household: "Chethana R", district: "Chamarajanagar", state: "Karnataka", familyMembers: 5 }
 ];
 
+const data = JSON.parse(localStorage.getItem('tempCencus'));
+console.log(data);
+
+    if (data) {
+      document.getElementById("pstate").textContent = data.state;
+      document.getElementById("pdistrict").textContent = data.district;
+      document.getElementById("pCity").textContent = data.city;
+      document.getElementById("pBlocknumber").textContent = data.enemuration;
+      document.getElementById("pHousehold").textContent = data.household;
+      document.getElementById("pFamilymembers").textContent = data.familyMembers;
+    }
+ document.getElementById("editBtn").addEventListener("click", () => {
+      window.location.href = "form.html";
+    });
+
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      if (!data) {
+        alert("No data found. Please fill the form again.");
+        window.location.href = "form.html";
+        return;
+      }
+        let allData = JSON.parse(localStorage.getItem("censusList")) || [];
+      allData.push(data);
+      allData.push(demodat);
+      localStorage.setItem("censusList", JSON.stringify(allData));
+      localStorage.removeItem("tempCensus");
+
+      alert("Census data submitted successfully!");
+      window.location.href = "/index.html";
+    });
+    
