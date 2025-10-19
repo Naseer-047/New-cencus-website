@@ -200,7 +200,7 @@ if (wrongPasswordCount > 5) {
   document.getElementById('tokeninp').style.display = 'block';
   document.getElementById('toenbtn').style.display = 'inline';
 }
-
+ 
 function tokbtn() {
   const token = document.getElementById('tokeninp').value;
   if (token === 'abc') {
