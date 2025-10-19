@@ -27,5 +27,6 @@ console.log(data);
 
       alert("Census data submitted successfully!");
       window.location.href = "/index.html";
+      return;
     });
     
