@@ -187,7 +187,7 @@ function btnclick() {
             <td class="trrr">${lodData[i].district}</td>
             <td class="trrr">${lodData[i].state}</td>
             <td class="trrr">${lodData[i].familyMembers}</td>
-          </tr>;
+          </tr>
           `;
   }
   tableBlock+=`</table>`
